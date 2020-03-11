@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>记事本</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            width: 400px;
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #999999;
+            border-collapse: collapse;
+            align-content: center;
+        }
+        table th {
+            background:#b5cfd2;
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #999999;
+        }
+        table td {
+            background:#dcddc0;
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody th:each="notebook:${list}">
+        <tr>
+            <th><LABEL>标题</LABEL></th>
+            <td th:text="${notebook.title}"></td>
+        </tr>
+        <tr>
+            <th><label>正文</label></th>
+            <td th:text="${notebook.text}"></td>
+        </tr>
+        <tr>
+            <th><label>操作</label></th>
+            <td><a id="add" onclick="add()">增加</a>&nbsp&nbsp<a id="update" onclick="update()">修改</a>&nbsp&nbsp<a id="delete" onclick="del()">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+<script>
+    function update() {
+        
+    }
+    function del() {
+
+    }
+</script>
+</body>
+</html>

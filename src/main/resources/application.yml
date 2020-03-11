@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: notebook
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/hb_1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.baisha.pojo
+
+
+server:
+  port: 8020
+
